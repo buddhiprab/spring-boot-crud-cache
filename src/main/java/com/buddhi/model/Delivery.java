@@ -1,4 +1,4 @@
-package com.buddhi.delivery;
+package com.buddhi.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;

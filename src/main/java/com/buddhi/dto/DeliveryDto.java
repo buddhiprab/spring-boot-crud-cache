@@ -1,4 +1,4 @@
-package com.buddhi.delivery;
+package com.buddhi.dto;
 
 import com.buddhi.util.CustomDateAndTimeDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
