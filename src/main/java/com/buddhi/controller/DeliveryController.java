@@ -34,6 +34,7 @@ public class DeliveryController {
 
     @GetMapping(path = "/{id}")
     public ResponseEntity<DeliveryDto> getDelivery(@PathVariable Long id) {
+        log.info("DeliveryController: getDelivery");
         DeliveryDto delivery = deliveryService.findById(id);
         return new ResponseEntity<>(delivery, HttpStatus.OK);
     }

@@ -36,7 +36,7 @@ public class DeliveryService {
 
     @Cacheable("delivery")
     public DeliveryDto findById(Long id){
-        log.info("deliveries: findById");
+        log.info("DeliveryService: findById");
         Delivery delivery = deliveryRepository.findById(id).orElse(null);
         DeliveryDto deliveryDto = new DeliveryDto();
         copyProperties(delivery,deliveryDto);
