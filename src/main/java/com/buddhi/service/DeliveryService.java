@@ -23,7 +23,7 @@ public class DeliveryService {
 
     @Cacheable("deliveries")
     public List<DeliveryDto> findAll(){
-        log.info("deliveries: findAll");
+        log.info("DeliveryService: findAll");
         List<Delivery> deliveries = deliveryRepository.findAll();
         List<DeliveryDto> deliveryDtos = new ArrayList<>();
         for (Delivery delivery:deliveries){
@@ -47,7 +47,7 @@ public class DeliveryService {
             @CacheEvict(value="delivery", allEntries=true),
             @CacheEvict(value="deliveries", allEntries=true)})
     public Delivery saveOrUpdate(DeliveryDto deliveryDto){
-        log.info("deliveries: saveOrUpdate");
+        log.info("DeliveryService: saveOrUpdate, {}", deliveryDto.getPickupName());
         Delivery delivery = Delivery.builder()
                 .pickupName(deliveryDto.getPickupName())
 //                .pickupAddress(deliveryDto.getPickupAddress())

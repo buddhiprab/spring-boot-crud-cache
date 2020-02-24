@@ -20,12 +20,14 @@ public class DeliveryController {
 
     @PostMapping(path = "")
     public ResponseEntity<Long> createOrUpdateDelivery(@RequestBody DeliveryDto deliveryDto) {
+        log.info("DeliveryController: createOrUpdateDelivery");
         Delivery delivery = deliveryService.saveOrUpdate(deliveryDto);
         return new ResponseEntity<>(delivery.getId(), HttpStatus.OK);
     }
 
     @GetMapping(path = "")
     public ResponseEntity<List<DeliveryDto>> getDeliveries() {
+        log.info("DeliveryController: getDeliveries");
         List<DeliveryDto> deliveries = deliveryService.findAll();
         return new ResponseEntity<>(deliveries, HttpStatus.OK);
     }
